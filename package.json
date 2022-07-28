@@ -1,0 +1,20 @@
+{
+  "name": "@halo-dev/theme-astro-starter",
+  "version": "0.0.1",
+  "private": true,
+  "scripts": {
+    "dev": "astro dev",
+    "start": "astro dev",
+    "build": "astro build",
+    "preview": "astro preview"
+  },
+  "devDependencies": {
+    "@astrojs/tailwind": "^0.2.5",
+    "@astrojs/vue": "^0.5.0",
+    "astro": "^1.0.0-rc.2",
+    "vue": "^3.2.37"
+  },
+  "dependencies": {
+    "@headlessui/vue": "^1.6.7"
+  }
+}

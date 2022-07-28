@@ -1,0 +1,15 @@
+apiVersion: theme.halo.run/v1alpha1
+kind: Theme
+spec:
+  displayName: Astro Starter
+  author:
+    name: ryanwang
+    website: 'https://ryanc.cc'
+  description: Halo 2.0 Theme base on Astro and Thymeleaf
+  logo: 'https://ryanc.cc/avatar'
+  website: 'https://ryanc.cc'
+  repo: 'https://github.com/ruibaby/theme-astro-starter'
+  version: '1.0'
+  require: '*'
+metadata:
+  name: theme-astro-starter
