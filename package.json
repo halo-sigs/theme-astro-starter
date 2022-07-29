@@ -11,10 +11,13 @@
   "devDependencies": {
     "@astrojs/tailwind": "^0.2.5",
     "@astrojs/vue": "^0.5.0",
+    "@types/node": "16",
     "astro": "^1.0.0-rc.2",
+    "cheerio": "1.0.0-rc.12",
     "vue": "^3.2.37"
   },
   "dependencies": {
-    "@headlessui/vue": "^1.6.7"
+    "@headlessui/vue": "^1.6.7",
+    "dayjs": "^1.11.4"
   }
 }
