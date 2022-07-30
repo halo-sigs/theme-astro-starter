@@ -1,0 +1,73 @@
+---
+import Layout from "../layouts/Layout.astro";
+
+const links = [
+  {
+    "id": 1,
+    "name": "Ryan Wang's Blog",
+    "url": "https://ryanc.cc/",
+    "logo": "https://ryanc.cc/avatar",
+    "description": "Hello Halo",
+    "team": "",
+    "priority": 0
+  },
+  {
+    "id": 40,
+    "name": "guqing's blog",
+    "url": "https://www.guqing.xyz/",
+    "logo": "https://www.guqing.xyz/avatar",
+    "description": "毕生所求无它，爱与自由而已",
+    "team": "",
+    "priority": 0
+  },
+  {
+    "id": 104,
+    "name": "JohnNiang's Blog",
+    "url": "https://johnniang.me",
+    "logo": "https://johnniang.me/avatar",
+    "description": "Core contributor of Halo organization.",
+    "team": "",
+    "priority": 0
+  },
+  {
+    "id": 152,
+    "name": "烟霞志",
+    "url": "https://simplestark.com",
+    "logo": "https://simplestark.com/avatar",
+    "description": "空有烟霞之志，叹无水云之身。",
+    "team": "",
+    "priority": 0
+  },
+]
+---
+
+<Layout title="Links">
+  <main>
+    <div class="grid grid-cols-1 gap-4 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-2 xl:grid-cols-2">
+
+      {links.map((data) => <a href={data.url} th:href="#{data.url}" target="_blank">
+        <div
+          class="relative rounded border border-gray-300 bg-white px-5 py-4 shadow-sm hover:shadow flex items-center space-x-3 hover:border-gray-400">
+          <div class="flex-shrink-0">
+            <img class="h-12 w-12 rounded-full" th:src="#{data.logo}" th:alt="#{data.name}" src={data.logo}
+              alt={data.name}>
+          </div>
+          <div class="flex-1 min-w-0">
+            <div>
+              <p class="text-sm font-medium text-gray-900 truncate" th:text="#{data.name}">{data.name}</p>
+              <p class="text-sm text-gray-500 truncate" th:text="#{data.description}">{data.description}</p>
+            </div>
+          </div>
+        </div>
+      </a>)}
+    </div>
+  </main>
+</Layout>
+
+<style>
+  main {
+    margin: auto;
+    padding: 1em;
+    max-width: 70ch;
+  }
+</style>
