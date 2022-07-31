@@ -17,12 +17,12 @@
     "@vue/eslint-config-typescript": "^11.0.0",
     "@vue/tsconfig": "^0.1.3",
     "astro": "^1.0.0-rc.2",
-    "cheerio": "1.0.0-rc.12",
     "eslint": "^8.20.0",
     "eslint-plugin-vue": "^9.3.0",
     "prettier": "^2.7.1",
     "prettier-plugin-tailwindcss": "^0.1.13",
-    "vue": "^3.2.37"
+    "vue": "^3.2.37",
+    "@halo-dev/astro-halo-theme-integration": "^0.0.1"
   },
   "dependencies": {
     "@headlessui/vue": "^1.6.7",
