@@ -16,11 +16,18 @@ const { title } = Astro.props as Props;
 </head>
 
 <body>
-  <nav class="flex gap-3">
-    <a href="/" th:href="@{/}">Home</a>
-    <a href="/post" th:href="@{/post}">Post</a>
-    <a href="/links" th:href="@{/links}">Links</a>
-  </nav>
+  <div class="flex justify-between">
+    <nav class="flex gap-3">
+      <a href="/" th:href="@{/}">Home</a>
+      <a href="/post" th:href="@{/post}">Post</a>
+      <a href="/links" th:href="@{/links}">Links</a>
+    </nav>
+    <div>
+      <a href="/">默认</a>
+      <a href="/?language=zh">中文</a>
+      <a href="/?language=en">英文</a>
+    </div>
+  </div>
   <slot />
 </body>
 
