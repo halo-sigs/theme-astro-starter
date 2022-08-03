@@ -1,0 +1,72 @@
+apiVersion: v1alpha1
+kind: Setting
+metadata:
+  name: theme-astro-starter-setting
+spec:
+  - group: basic
+    label: 基本设置
+    formSchema:
+      - $el: h2
+        children: Welcome to Theme Astro Starter World
+      - $formkit: select
+        name: sidebar_width
+        label: 侧边栏宽度
+        options:
+          '20': 20%
+          '30': 30%
+          '40': 40%
+          '50': 50%
+      - $formkit: text
+        name: sidebar_background
+        label: 侧边栏背景图
+      - $formkit: text
+        name: top_logo
+        label: 左上角图标
+      - $formkit: radio
+        name: circle_avatar
+        label: 原型头像
+        options:
+          - label: 开启
+            value: true
+          - label: 关闭
+            value: false
+        value: false
+      - $formkit: radio
+        name: katex
+        label: KaTex 公式渲染
+        options:
+          - label: 开启
+            value: true
+          - label: 关闭
+            value: false
+        value: false
+      - $formkit: textarea
+        name: codeblock_highlight_languages
+        label: 文章代码高亮语言
+        help: >-
+          默认已经包含：php,diff,java,css,bash,json,perl,swift,plaintext,ruby,yaml,sql,vbnet,ini,scss,less,cpp,typescript,csharp,rust,python,python-repl,objectivec,r,shell,makefile,go,xml,markdown,lua,javascript,php-template,kotlin,c
+          如果需要添加其他语言，请按照相同格式添加。
+  - group: social
+    label: 社交资料
+    formSchema:
+      - $formkit: radio
+        name: rss
+        label: RSS
+        options:
+          - label: 开启
+            value: true
+          - label: 关闭
+            value: false
+        value: true
+      - $formkit: text
+        name: twitter
+        label: Twitter
+      - $formkit: text
+        name: telegram
+        label: Telegram
+      - $formkit: text
+        name: github
+        label: GitHub
+      - $formkit: text
+        name: email
+        label: Email
