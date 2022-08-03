@@ -10,7 +10,7 @@ spec:
   website: 'https://ryanc.cc'
   repo: 'https://github.com/ruibaby/theme-astro-starter'
   settingName: 'theme-astro-starter-setting'
-  configMapName: 'theme-astro-starter-configMap',
+  configMapName: 'theme-astro-starter-configMap'
   version: '1.0'
   require: '*'
 metadata:
