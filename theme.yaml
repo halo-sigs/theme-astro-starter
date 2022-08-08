@@ -3,12 +3,12 @@ kind: Theme
 spec:
   displayName: Astro Starter
   author:
-    name: ryanwang
-    website: 'https://ryanc.cc'
+    name: Halo OSS Organization
+    website: 'https://halo.run'
   description: Halo 2.0 Theme base on Astro and Thymeleaf
-  logo: 'https://ryanc.cc/avatar'
-  website: 'https://ryanc.cc'
-  repo: 'https://github.com/ruibaby/theme-astro-starter'
+  logo: 'https://halo.run/logo'
+  website: 'https://halo.run'
+  repo: 'https://github.com/halo-sigs/theme-astro-starter'
   settingName: 'theme-astro-starter-setting'
   configMapName: 'theme-astro-starter-configMap'
   version: '1.0'
