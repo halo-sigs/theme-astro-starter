@@ -26,6 +26,9 @@ import PostCard from "../components/PostCard.vue"
       <li th:text="#{hello('Ryan Wang')}"></li>
     </ul>
     <PostCard client:visible />
+    <p th:each="post : ${postFinder.list(1, 10)}">
+      <span th:text="${post.name}">Onions</span>
+    </p>
   </main>
 </Layout>
 
