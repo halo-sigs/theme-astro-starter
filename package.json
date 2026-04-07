@@ -34,7 +34,9 @@
     "vue": "^3.5.32"
   },
   "devDependencies": {
+    "@iconify-json/mingcute": "^1.2.7",
     "prettier": "3.8.1",
-    "prettier-plugin-astro": "0.14.1"
+    "prettier-plugin-astro": "0.14.1",
+    "unplugin-icons": "^23.0.1"
   }
 }
