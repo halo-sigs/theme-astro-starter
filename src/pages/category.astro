@@ -14,7 +14,6 @@ import Layout from "../layouts/Layout.astro";
     </p>
   </div>
 
-  
   <th:block th:replace="~{fragments/post-list}"></th:block>
 
   <div th:if="${posts.total == 0}" class="feed-empty">暂无文章。</div>

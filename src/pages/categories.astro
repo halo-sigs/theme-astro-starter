@@ -8,10 +8,7 @@ import Layout from "../layouts/Layout.astro";
   </Fragment>
 
   <nav class="taxonomy-list" aria-label="Category list">
-    <div
-      th:each="category : ${categories}"
-      class="taxonomy-list__item"
-    >
+    <div th:each="category : ${categories}" class="taxonomy-list__item">
       <a
         class="taxonomy-list__link"
         th:href="@{${category.status.permalink}}"
