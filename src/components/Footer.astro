@@ -1,0 +1,33 @@
+---
+// TODO: Only execute when compiling Astro templates, so it will not be dynamically updated
+const today = new Date();
+---
+
+<footer>
+  <div class="footer-inner">
+    <span>
+      &copy; {today.getFullYear()}
+      <th:block th:text="${site.title}"></th:block>.
+    </span>
+  </div>
+</footer>
+
+<style>
+  footer {
+    border-top: 1px solid var(--rule);
+    background: var(--bg);
+  }
+
+  .footer-inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+    width: 820px;
+    max-width: calc(100% - 2.5rem);
+    margin: 0 auto;
+    padding: 1.5rem 0 2.5rem;
+    color: var(--ink-3);
+    font-size: 0.88rem;
+  }
+</style>

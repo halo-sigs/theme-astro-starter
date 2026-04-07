@@ -1,86 +1,13 @@
-<!DOCTYPE html><html lang="en" class="astro-TFKA5VKL"><head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width">
-  <title>Welcome to Astro.</title>
-<link rel="stylesheet" href="/assets/index-links-post.be069062.css" th:href="@{/assets/index-links-post.be069062.css}">
-<link rel="stylesheet" href="/assets/index.396b2b11.css" th:href="@{/assets/index.396b2b11.css}"></head>
-
-<body class="astro-TFKA5VKL">
-  <div class="flex justify-between astro-TFKA5VKL">
-    <nav class="flex gap-3 astro-TFKA5VKL">
-      <a href="/" th:href="@{/}" class="astro-TFKA5VKL">Home</a>
-      <a href="/post" th:href="@{/post}" class="astro-TFKA5VKL">Post</a>
-      <a href="/links" th:href="@{/links}" class="astro-TFKA5VKL">Links</a>
-    </nav>
-    <div class="astro-TFKA5VKL">
-      <a href="/" class="astro-TFKA5VKL">默认</a>
-      <a href="/?language=zh" class="astro-TFKA5VKL">中文</a>
-      <a href="/?language=en" class="astro-TFKA5VKL">英文</a>
-    </div>
-  </div>
-  <main class="astro-AQ2P6PWU">
-    <h1 class="astro-AQ2P6PWU">Welcome to <span class="text-gradient astro-AQ2P6PWU">Astro</span></h1>
-    <p class="instructions astro-AQ2P6PWU">
-      Check out the <code class="astro-AQ2P6PWU">src/pages</code> directory to get started.<br class="astro-AQ2P6PWU">
-      <strong class="astro-AQ2P6PWU">Code Challenge:</strong> Tweak the "Welcome to Astro" message above.
-    </p>
-    <ul role="list" class="link-card-grid astro-AQ2P6PWU">
-      <li class="link-card astro-DYDDWWYO">
-	<a href="https://docs.astro.build/" class="astro-DYDDWWYO">
-		<h2 class="astro-DYDDWWYO">
-			Documentation
-			<span class="astro-DYDDWWYO">→</span>
-		</h2>
-		<p class="astro-DYDDWWYO">
-			Learn how Astro works and explore the official API docs.
-		</p>
-	</a>
-</li>
-      <li class="link-card astro-DYDDWWYO">
-	<a href="https://astro.build/integrations/" class="astro-DYDDWWYO">
-		<h2 class="astro-DYDDWWYO">
-			Integrations
-			<span class="astro-DYDDWWYO">→</span>
-		</h2>
-		<p class="astro-DYDDWWYO">
-			Supercharge your project with new frameworks and libraries.
-		</p>
-	</a>
-</li>
-      <li class="link-card astro-DYDDWWYO">
-	<a href="https://astro.build/themes/" class="astro-DYDDWWYO">
-		<h2 class="astro-DYDDWWYO">
-			Themes
-			<span class="astro-DYDDWWYO">→</span>
-		</h2>
-		<p class="astro-DYDDWWYO">
-			Explore a galaxy of community-built starter themes.
-		</p>
-	</a>
-</li>
-      <li class="link-card astro-DYDDWWYO">
-	<a href="https://astro.build/chat/" class="astro-DYDDWWYO">
-		<h2 class="astro-DYDDWWYO">
-			Chat
-			<span class="astro-DYDDWWYO">→</span>
-		</h2>
-		<p class="astro-DYDDWWYO">
-			Come say hi to our amazing Discord community. ❤️
-		</p>
-	</a>
-</li>
-    </ul>
-    <ul class="list-decimal list-inside astro-AQ2P6PWU">
-      <li th:text="#{foo}" class="astro-AQ2P6PWU"></li>
-      <li th:text="#{bar}" class="astro-AQ2P6PWU"></li>
-      <li th:text="#{hello('Ryan Wang')}" class="astro-AQ2P6PWU"></li>
-    </ul>
-    <style>astro-island,astro-slot{display:contents}</style><script>(self.Astro=self.Astro||{}).visible=(s,c,n)=>{const r=async()=>{await(await s())()};let i=new IntersectionObserver(e=>{for(const t of e)if(!!t.isIntersecting){i.disconnect(),r();break}});for(let e=0;e<n.children.length;e++){const t=n.children[e];i.observe(t)}},window.dispatchEvent(new Event("astro:visible"));var d;{const l={0:t=>t,1:t=>JSON.parse(t,n),2:t=>new RegExp(t),3:t=>new Date(t),4:t=>new Map(JSON.parse(t,n)),5:t=>new Set(JSON.parse(t,n)),6:t=>BigInt(t),7:t=>new URL(t)},n=(t,r)=>{if(t===""||!Array.isArray(r))return r;const[e,i]=r;return e in l?l[e](i):void 0};customElements.get("astro-island")||customElements.define("astro-island",(d=class extends HTMLElement{constructor(){super(...arguments);this.hydrate=()=>{if(!this.hydrator||this.parentElement?.closest("astro-island[ssr]"))return;const r=this.querySelectorAll("astro-slot"),e={},i=this.querySelectorAll("template[data-astro-template]");for(const s of i)!s.closest(this.tagName)?.isSameNode(this)||(e[s.getAttribute("data-astro-template")||"default"]=s.innerHTML,s.remove());for(const s of r)!s.closest(this.tagName)?.isSameNode(this)||(e[s.getAttribute("name")||"default"]=s.innerHTML);const o=this.hasAttribute("props")?JSON.parse(this.getAttribute("props"),n):{};this.hydrator(this)(this.Component,o,e,{client:this.getAttribute("client")}),this.removeAttribute("ssr"),window.removeEventListener("astro:hydrate",this.hydrate),window.dispatchEvent(new CustomEvent("astro:hydrate"))}}connectedCallback(){!this.hasAttribute("await-children")||this.firstChild?this.childrenConnectedCallback():new MutationObserver((r,e)=>{e.disconnect(),this.childrenConnectedCallback()}).observe(this,{childList:!0})}async childrenConnectedCallback(){window.addEventListener("astro:hydrate",this.hydrate),await import(this.getAttribute("before-hydration-url")),this.start()}start(){const r=JSON.parse(this.getAttribute("opts")),e=this.getAttribute("client");if(Astro[e]===void 0){window.addEventListener(`astro:${e}`,()=>this.start(),{once:!0});return}Astro[e](async()=>{const i=this.getAttribute("renderer-url"),[o,{default:s}]=await Promise.all([import(this.getAttribute("component-url")),i?import(i):()=>()=>{}]),a=this.getAttribute("component-export")||"default";if(!a.includes("."))this.Component=o[a];else{this.Component=o;for(const c of a.split("."))this.Component=this.Component[c]}return this.hydrator=s,this.hydrate},r,this)}attributeChangedCallback(){this.hydrator&&this.hydrate()}},d.observedAttributes=["props"],d))}</script><astro-island uid="2pcixh" component-url="/assets/PostCard.ccb901a8.js" component-export="default" renderer-url="/assets/client.396edee1.js" props="{&quot;class&quot;:[0,&quot;astro-AQ2P6PWU&quot;]}" ssr="" client="visible" before-hydration-url="data:text/javascript;charset=utf-8,//[no before-hydration script]" opts="{&quot;name&quot;:&quot;PostCard&quot;,&quot;value&quot;:true}" await-children="" th:component-url="@{/assets/PostCard.ccb901a8.js}" th:renderer-url="@{/assets/client.396edee1.js}"><div class="p-4 astro-AQ2P6PWU"><span class="text-xl font-bold" th:text="@{post.title}">Hello Halo</span><div class="flex flex-col items-center py-16"><div class="h-32 w-32"><div class="h-full w-full rounded-md bg-white shadow-lg"></div></div><button class="mt-8 flex transform items-center rounded-full bg-black bg-opacity-20 px-3 py-2 text-sm font-medium text-white transition hover:scale-105 hover:bg-opacity-30 focus:outline-none active:bg-opacity-40"><svg class="h-5 w-5 opacity-70" fill="none" viewBox="0 0 20 20"><path d="M14.9497 14.9498C12.2161 17.6835 7.78392 17.6835 5.05025 14.9498C2.31658 12.2162 2.31658 7.784 5.05025 5.05033C7.78392 2.31666 12.2161 2.31666 14.9497 5.05033C15.5333 5.63385 15.9922 6.29475 16.3266 7M16.9497 2L17 7H16.3266M12 7L16.3266 7" stroke="currentColor" stroke-width="1.5"></path></svg><span class="ml-3">Click to transition</span></button></div></div></astro-island>
-    <p th:each="post : ${postFinder.list(1, 10)}" class="astro-AQ2P6PWU">
-  <span th:text="${post.name}" class="astro-AQ2P6PWU">Onions</span>
-</p>
-  </main>
-
-
-
-</body></html>
+<!DOCTYPE html><html lang="en"> <head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><script>
+      (function () {
+        var stored = localStorage.getItem("theme");
+        var prefersDark = window.matchMedia(
+          "(prefers-color-scheme: dark)",
+        ).matches;
+        if (stored === "dark" || (!stored && prefersDark)) {
+          document.documentElement.classList.add("dark");
+        }
+      })();
+    </script> <title th:text="${site.title}"></title> <link rel="stylesheet" href="/themes/astro-starter/assets/Layout.CBfLtUah.css"></head> <body> <header data-astro-cid-3ef6ksr2> <div class="header-inner" data-astro-cid-3ef6ksr2> <a class="brand" href="/" th:text="${site.title}" data-astro-cid-3ef6ksr2></a> <nav th:with="menu = ${menuFinder.getPrimary()}" aria-label="Main navigation" data-astro-cid-3ef6ksr2> <a th:each="menuItem : ${menu.menuItems}" th:href="@{${menuItem.status.href}}" th:target="${menuItem.spec.target?.value}" th:text="${menuItem.status.displayName}" data-astro-cid-3ef6ksr2></a> </nav> <style>astro-island,astro-slot,astro-static-slot{display:contents}</style><script>(()=>{var e=async t=>{await(await t())()};(self.Astro||(self.Astro={})).load=e;window.dispatchEvent(new Event("astro:load"));})();</script><script>(()=>{var A=Object.defineProperty;var g=(i,o,a)=>o in i?A(i,o,{enumerable:!0,configurable:!0,writable:!0,value:a}):i[o]=a;var d=(i,o,a)=>g(i,typeof o!="symbol"?o+"":o,a);{let i={0:t=>m(t),1:t=>a(t),2:t=>new RegExp(t),3:t=>new Date(t),4:t=>new Map(a(t)),5:t=>new Set(a(t)),6:t=>BigInt(t),7:t=>new URL(t),8:t=>new Uint8Array(t),9:t=>new Uint16Array(t),10:t=>new Uint32Array(t),11:t=>Number.POSITIVE_INFINITY*t},o=t=>{let[l,e]=t;return l in i?i[l](e):void 0},a=t=>t.map(o),m=t=>typeof t!="object"||t===null?t:Object.fromEntries(Object.entries(t).map(([l,e])=>[l,o(e)]));class y extends HTMLElement{constructor(){super(...arguments);d(this,"Component");d(this,"hydrator");d(this,"hydrate",async()=>{var b;if(!this.hydrator||!this.isConnected)return;let e=(b=this.parentElement)==null?void 0:b.closest("astro-island[ssr]");if(e){e.addEventListener("astro:hydrate",this.hydrate,{once:!0});return}let c=this.querySelectorAll("astro-slot"),n={},h=this.querySelectorAll("template[data-astro-template]");for(let r of h){let s=r.closest(this.tagName);s!=null&&s.isSameNode(this)&&(n[r.getAttribute("data-astro-template")||"default"]=r.innerHTML,r.remove())}for(let r of c){let s=r.closest(this.tagName);s!=null&&s.isSameNode(this)&&(n[r.getAttribute("name")||"default"]=r.innerHTML)}let p;try{p=this.hasAttribute("props")?m(JSON.parse(this.getAttribute("props"))):{}}catch(r){let s=this.getAttribute("component-url")||"<unknown>",v=this.getAttribute("component-export");throw v&&(s+=` (export ${v})`),console.error(`[hydrate] Error parsing props for component ${s}`,this.getAttribute("props"),r),r}let u;await this.hydrator(this)(this.Component,p,n,{client:this.getAttribute("client")}),this.removeAttribute("ssr"),this.dispatchEvent(new CustomEvent("astro:hydrate"))});d(this,"unmount",()=>{this.isConnected||this.dispatchEvent(new CustomEvent("astro:unmount"))})}disconnectedCallback(){document.removeEventListener("astro:after-swap",this.unmount),document.addEventListener("astro:after-swap",this.unmount,{once:!0})}connectedCallback(){if(!this.hasAttribute("await-children")||document.readyState==="interactive"||document.readyState==="complete")this.childrenConnectedCallback();else{let e=()=>{document.removeEventListener("DOMContentLoaded",e),c.disconnect(),this.childrenConnectedCallback()},c=new MutationObserver(()=>{var n;((n=this.lastChild)==null?void 0:n.nodeType)===Node.COMMENT_NODE&&this.lastChild.nodeValue==="astro:end"&&(this.lastChild.remove(),e())});c.observe(this,{childList:!0}),document.addEventListener("DOMContentLoaded",e)}}async childrenConnectedCallback(){let e=this.getAttribute("before-hydration-url");e&&await import(e),this.start()}async start(){let e=JSON.parse(this.getAttribute("opts")),c=this.getAttribute("client");if(Astro[c]===void 0){window.addEventListener(`astro:${c}`,()=>this.start(),{once:!0});return}try{await Astro[c](async()=>{let n=this.getAttribute("renderer-url"),[h,{default:p}]=await Promise.all([import(this.getAttribute("component-url")),n?import(n):()=>()=>{}]),u=this.getAttribute("component-export")||"default";if(!u.includes("."))this.Component=h[u];else{this.Component=h;for(let f of u.split("."))this.Component=this.Component[f]}return this.hydrator=p,this.hydrate},e,this)}catch(n){console.error(`[astro-island] Error hydrating ${this.getAttribute("component-url")}`,n)}}attributeChangedCallback(){this.hydrate()}}d(y,"observedAttributes",["props"]),customElements.get("astro-island")||customElements.define("astro-island",y)}})();</script><astro-island uid="1L3JFo" prefix="s0" component-url="/themes/astro-starter/assets/ThemeSwitcher.YRqkXSdT.js" component-export="default" renderer-url="/themes/astro-starter/assets/client.DVUslHZS.js" props="{&quot;data-astro-cid-3ef6ksr2&quot;:[0,true]}" ssr client="load" opts="{&quot;name&quot;:&quot;ThemeSwitcher&quot;,&quot;value&quot;:true}" await-children><button class="theme-toggle" type="button" aria-label="Switch to dark mode" data-astro-cid-3ef6ksr2="true" data-v-976d6eb8><svg xmlns="http://www.w3.org/2000/svg" width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" data-v-976d6eb8><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z" data-v-976d6eb8></path></svg></button><!--astro:end--></astro-island> </div> </header> <main class="layout-main"> <article class="page-shell">  <div class="page-content">   <ul class="post-feed__list" role="list"> <li th:each="post : ${posts.items}" class="post-feed__item"> <a class="post-feed__link" th:href="@{${post.status.permalink}}"> <div class="post-feed__body"> <p class="post-feed__date" th:text="${#dates.format(post.spec.publishTime, 'yyyy-MM-dd')}"></p> <h2 class="post-feed__title" th:text="${post.spec.title}"></h2> <p class="post-feed__excerpt" th:text="${post.status.excerpt}"></p> </div> <img th:unless="${#strings.isEmpty(post.spec.cover)}" class="post-feed__image" th:src="${post.spec.cover}"> </a> </li> </ul> <nav th:if="${posts.totalPages gt 1}" class="pagination" aria-label="Pagination"> <a th:if="${posts.hasPrevious()}" th:href="@{${posts.prevUrl}}" class="pagination__prev">&larr; 较新</a> <span class="pagination__info" th:text="|${posts.page} / ${posts.totalPages}|"></span> <a th:if="${posts.hasNext()}" th:href="@{${posts.nextUrl}}" class="pagination__next">较旧 &rarr;</a> </nav>  </div> </article> </main> <footer data-astro-cid-sz7xmlte> <div class="footer-inner" data-astro-cid-sz7xmlte> <span data-astro-cid-sz7xmlte>
+&copy; 2026 <th:block th:text="${site.title}" data-astro-cid-sz7xmlte></th:block>.
+</span> </div> </footer> </body></html>

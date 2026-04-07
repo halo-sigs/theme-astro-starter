@@ -1,0 +1,25 @@
+---
+import Layout from "../layouts/Layout.astro";
+---
+
+<Layout contentClass="prose">
+  <Fragment slot="head">
+    <title th:text="|${singlePage.spec.title} - ${site.title}|"></title>
+  </Fragment>
+
+  <div class="page-heading">
+    <h1 th:text="${singlePage.spec.title}"></h1>
+    <p class="page-meta">
+      <span
+        th:text="${#dates.format(singlePage.spec.publishTime, 'yyyy-MM-dd')}"
+      ></span>
+    </p>
+  </div>
+
+  <div th:utext="${singlePage.content.content}"></div>
+
+  <halo:comment
+    group="content.halo.run"
+    kind="SinglePage"
+    th:attr="name=${singlePage.metadata.name}"></halo:comment>
+</Layout>

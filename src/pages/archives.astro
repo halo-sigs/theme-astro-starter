@@ -1,0 +1,65 @@
+---
+import Layout from "../layouts/Layout.astro";
+---
+
+<Layout pageTitle="归档">
+  <Fragment slot="head">
+    <title th:text="|归档 - ${site.title}|"></title>
+  </Fragment>
+
+  <section class="archive-list" aria-label="Archive list">
+    <th:block th:each="archive : ${archives.items}">
+      <th:block th:each="month : ${archive.months}">
+        <div class="archive-group">
+          <h2
+            class="archive-group__year"
+            th:text="|${archive.year} · ${month.month}|"
+          >
+          </h2>
+          <ul class="archive-group__items">
+            <li th:each="post : ${month.posts}" class="archive-entry">
+              <span
+                class="archive-entry__date"
+                th:text="${#dates.format(post.spec.publishTime, 'MM/dd')}"
+              ></span>
+              <div>
+                <h3 class="archive-entry__title">
+                  <a
+                    th:href="@{${post.status.permalink}}"
+                    th:text="${post.spec.title}"></a>
+                </h3>
+                <p
+                  class="archive-entry__summary"
+                  th:text="${post.status.excerpt}"
+                >
+                </p>
+              </div>
+            </li>
+          </ul>
+        </div>
+      </th:block>
+    </th:block>
+
+    <div th:if="${archives.total == 0}" class="archive-empty">暂无文章。</div>
+  </section>
+
+  <nav
+    th:if="${archives.totalPages gt 1}"
+    class="pagination"
+    aria-label="Pagination"
+  >
+    <a
+      th:if="${archives.hasPrevious()}"
+      th:href="@{${archives.prevUrl}}"
+      class="pagination__prev">&larr; 较新</a
+    >
+    <span
+      class="pagination__info"
+      th:text="|${archives.page} / ${archives.totalPages}|"></span>
+    <a
+      th:if="${archives.hasNext()}"
+      th:href="@{${archives.nextUrl}}"
+      class="pagination__next">较旧 &rarr;</a
+    >
+  </nav>
+</Layout>

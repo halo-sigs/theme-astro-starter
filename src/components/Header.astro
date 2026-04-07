@@ -1,0 +1,101 @@
+---
+import ThemeSwitcher from "./ThemeSwitcher.vue";
+---
+
+<header>
+  <div class="header-inner">
+    <a class="brand" href="/" th:text="${site.title}"></a>
+    <nav
+      th:with="menu = ${menuFinder.getPrimary()}"
+      aria-label="Main navigation"
+    >
+      <a
+        th:each="menuItem : ${menu.menuItems}"
+        th:href="@{${menuItem.status.href}}"
+        th:target="${menuItem.spec.target?.value}"
+        th:text="${menuItem.status.displayName}"
+      >
+      </a>
+    </nav>
+    <ThemeSwitcher client:load />
+  </div>
+</header>
+
+<style>
+  header {
+    background: var(--bg);
+    border-bottom: 1px solid var(--rule);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+  }
+
+  .header-inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 2rem;
+    width: 820px;
+    max-width: calc(100% - 2.5rem);
+    margin: 0 auto;
+    height: 58px;
+  }
+
+  .brand {
+    font-size: 1rem;
+    font-weight: 700;
+    color: var(--ink);
+    text-decoration: none;
+    letter-spacing: -0.02em;
+    flex-shrink: 0;
+  }
+
+  .brand:hover {
+    color: var(--accent);
+  }
+
+  nav {
+    display: flex;
+    align-items: center;
+    gap: 0.2rem;
+  }
+
+  nav :global(a) {
+    display: inline-block;
+    padding: 0.3rem 0.65rem;
+    border-radius: 6px;
+    font-size: 0.9rem;
+    color: var(--ink-2);
+    text-decoration: none;
+    transition:
+      color 0.15s ease,
+      background 0.15s ease;
+  }
+
+  nav :global(a:hover) {
+    color: var(--ink);
+    background: var(--bg-raised);
+  }
+
+  nav :global(a.active) {
+    color: var(--ink);
+    background: var(--bg-raised);
+    font-weight: 600;
+  }
+
+  @media (max-width: 680px) {
+    .header-inner {
+      flex-direction: column;
+      align-items: flex-start;
+      height: auto;
+      padding: 1rem 0;
+      gap: 0.75rem;
+    }
+
+    nav {
+      flex-wrap: wrap;
+      gap: 0.1rem;
+      margin-left: -0.65rem;
+    }
+  }
+</style>

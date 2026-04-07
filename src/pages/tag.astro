@@ -4,8 +4,16 @@ import Layout from "../layouts/Layout.astro";
 
 <Layout>
   <Fragment slot="head">
-    <title th:text="${site.title}"></title>
+    <title th:text="|${tag.spec.displayName} - ${site.title}|"></title>
   </Fragment>
+
+  <div class="page-heading">
+    <h1 th:text="${tag.spec.displayName}"></h1>
+    <p class="page-meta">
+      <span th:text="|${posts.total} 篇文章|"></span>
+    </p>
+  </div>
+
   <ul class="post-feed__list" role="list">
     <li th:each="post : ${posts.items}" class="post-feed__item">
       <a class="post-feed__link" th:href="@{${post.status.permalink}}">
@@ -26,6 +34,8 @@ import Layout from "../layouts/Layout.astro";
       </a>
     </li>
   </ul>
+
+  <div th:if="${posts.total == 0}" class="feed-empty">暂无文章。</div>
 
   <nav
     th:if="${posts.totalPages gt 1}"

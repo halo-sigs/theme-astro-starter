@@ -1,69 +1,52 @@
 ---
-export interface Props {
-  title: string;
+import "../styles/global.css";
+import Footer from "../components/Footer.astro";
+import Header from "../components/Header.astro";
+
+interface Props {
+  pageTitle?: string;
+  contentClass?: string;
 }
 
-const { title } = Astro.props as Props;
+const { pageTitle, contentClass } = Astro.props;
+
+const hasHeading = Boolean(pageTitle);
 ---
 
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width" />
-  <title>{title}</title>
-</head>
-
-<body>
-  <div class="flex justify-between">
-    <nav class="flex gap-3">
-      <a href="/" th:href="@{/}">Home</a>
-      <a href="/post" th:href="@{/post}">Post</a>
-      <a href="/links" th:href="@{/links}">Links</a>
-    </nav>
-    <div>
-      <a href="/">默认</a>
-      <a href="/?language=zh">中文</a>
-      <a href="/?language=en">英文</a>
-    </div>
-  </div>
-  <slot />
-</body>
-
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <script is:inline>
+      (function () {
+        var stored = localStorage.getItem("theme");
+        var prefersDark = window.matchMedia(
+          "(prefers-color-scheme: dark)",
+        ).matches;
+        if (stored === "dark" || (!stored && prefersDark)) {
+          document.documentElement.classList.add("dark");
+        }
+      })();
+    </script>
+    <slot name="head" />
+  </head>
+  <body>
+    <Header />
+    <main class="layout-main">
+      <article class="page-shell">
+        {
+          hasHeading && (
+            <header class="page-heading">
+              {pageTitle && <h1>{pageTitle}</h1>}
+            </header>
+          )
+        }
+        <div class:list={["page-content", contentClass]}>
+          <slot />
+        </div>
+      </article>
+    </main>
+    <Footer />
+  </body>
 </html>
-<style>
-  :root {
-    --font-size-base: clamp(1rem, 0.34vw + 0.91rem, 1.19rem);
-    --font-size-lg: clamp(1.2rem, 0.7vw + 1.2rem, 1.5rem);
-    --font-size-xl: clamp(2.44rem, 2.38vw + 1.85rem, 3.75rem);
-
-    --color-text: hsl(12, 5%, 4%);
-    --color-bg: hsl(10, 21%, 95%);
-    --color-border: hsl(17, 24%, 90%);
-  }
-
-  html {
-    font-family: system-ui, sans-serif;
-    font-size: var(--font-size-base);
-    color: var(--color-text);
-    background-color: var(--color-bg);
-  }
-
-  body {
-    margin: 0;
-  }
-
-  :global(h1) {
-    font-size: var(--font-size-xl);
-  }
-
-  :global(h2) {
-    font-size: var(--font-size-lg);
-  }
-
-  :global(code) {
-    font-family: Menlo, Monaco, Lucida Console, Liberation Mono, DejaVu Sans Mono,
-      Bitstream Vera Sans Mono, Courier New, monospace;
-  }
-</style>

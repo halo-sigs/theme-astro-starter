@@ -1,0 +1,21 @@
+---
+import Layout from "../layouts/Layout.astro";
+---
+
+<Layout pageTitle="标签">
+  <Fragment slot="head">
+    <title th:text="|标签 - ${site.title}|"></title>
+  </Fragment>
+
+  <div class="tag-cloud" role="list" aria-label="Tag list">
+    <a
+      th:each="tag : ${tags}"
+      class="tag-pill"
+      role="listitem"
+      th:href="@{${tag.status.permalink}}"
+    >
+      <span th:text="${tag.spec.displayName}"></span>
+      <span class="tag-pill__count" th:text="${tag.postCount}"></span>
+    </a>
+  </div>
+</Layout>

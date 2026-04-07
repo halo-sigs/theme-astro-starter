@@ -1,0 +1,25 @@
+---
+import Layout from "../layouts/Layout.astro";
+---
+
+<Layout pageTitle="分类">
+  <Fragment slot="head">
+    <title th:text="|分类 - ${site.title}|"></title>
+  </Fragment>
+
+  <nav class="taxonomy-list" aria-label="Category list">
+    <div
+      th:each="category : ${categories}"
+      class="taxonomy-list__item"
+    >
+      <a
+        class="taxonomy-list__link"
+        th:href="@{${category.status.permalink}}"
+        th:text="${category.spec.displayName}"
+      >
+      </a>
+      <span class="taxonomy-list__count" th:text="|${category.postCount} 篇|">
+      </span>
+    </div>
+  </nav>
+</Layout>
