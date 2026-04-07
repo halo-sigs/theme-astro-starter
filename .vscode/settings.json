@@ -2,5 +2,11 @@
   "emmet.includeLanguages": {
     "astro": "html"
   },
-  "i18n-ally.localesPaths": ["demo-themes/theme-earth/i18n"]
+  "i18n-ally.localesPaths": ["demo-themes/theme-earth/i18n"],
+  "[vue]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[astro]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  }
 }

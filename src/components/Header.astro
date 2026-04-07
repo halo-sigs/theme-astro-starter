@@ -1,5 +1,6 @@
 ---
 import ThemeSwitcher from "./ThemeSwitcher.vue";
+import UserButton from "./UserButton.vue";
 ---
 
 <header>
@@ -17,7 +18,15 @@ import ThemeSwitcher from "./ThemeSwitcher.vue";
       >
       </a>
     </nav>
-    <ThemeSwitcher client:load />
+    <div class="header-actions">
+      <ThemeSwitcher client:load />
+      <UserButton client:load>
+        <div slot="fallback" class="user-button-fallback" aria-hidden="true">
+          <span class="user-button-fallback__avatar"></span>
+          <span class="user-button-fallback__text"></span>
+        </div>
+      </UserButton>
+    </div>
   </div>
 </header>
 
@@ -58,6 +67,53 @@ import ThemeSwitcher from "./ThemeSwitcher.vue";
     display: flex;
     align-items: center;
     gap: 0.2rem;
+    flex: 1;
+  }
+
+  .header-actions {
+    display: flex;
+    align-items: center;
+    gap: 0.35rem;
+    margin-left: auto;
+  }
+
+  .user-button-fallback {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.55rem;
+    box-sizing: border-box;
+    flex-shrink: 0;
+    width: 112px;
+    height: 34px;
+    padding: 0 0.7rem;
+    border-radius: 8px;
+    pointer-events: none;
+  }
+
+  .user-button-fallback__avatar,
+  .user-button-fallback__text {
+    display: block;
+    background: linear-gradient(
+      90deg,
+      var(--bg-raised) 0%,
+      color-mix(in srgb, var(--bg-raised) 78%, var(--ink) 22%) 50%,
+      var(--bg-raised) 100%
+    );
+    background-size: 200% 100%;
+    animation: user-button-fallback-shimmer 1.2s ease-in-out infinite;
+  }
+
+  .user-button-fallback__avatar {
+    width: 20px;
+    height: 20px;
+    border-radius: 999px;
+    flex-shrink: 0;
+  }
+
+  .user-button-fallback__text {
+    width: 100%;
+    height: 0.72rem;
+    border-radius: 999px;
   }
 
   nav :global(a) {
@@ -96,6 +152,21 @@ import ThemeSwitcher from "./ThemeSwitcher.vue";
       flex-wrap: wrap;
       gap: 0.1rem;
       margin-left: -0.65rem;
+      flex: initial;
+    }
+
+    .header-actions {
+      margin-left: 0;
+    }
+  }
+
+  @keyframes user-button-fallback-shimmer {
+    0% {
+      background-position: 200% 0;
+    }
+
+    100% {
+      background-position: -200% 0;
     }
   }
 </style>
