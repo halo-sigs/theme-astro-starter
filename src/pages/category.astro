@@ -14,26 +14,8 @@ import Layout from "../layouts/Layout.astro";
     </p>
   </div>
 
-  <ul class="post-feed__list" role="list">
-    <li th:each="post : ${posts.items}" class="post-feed__item">
-      <a class="post-feed__link" th:href="@{${post.status.permalink}}">
-        <div class="post-feed__body">
-          <p
-            class="post-feed__date"
-            th:text="${#dates.format(post.spec.publishTime, 'yyyy-MM-dd')}"
-          >
-          </p>
-          <h2 class="post-feed__title" th:text="${post.spec.title}"></h2>
-          <p class="post-feed__excerpt" th:text="${post.status.excerpt}"></p>
-        </div>
-        <img
-          th:unless="${#strings.isEmpty(post.spec.cover)}"
-          class="post-feed__image"
-          th:src="${post.spec.cover}"
-        />
-      </a>
-    </li>
-  </ul>
+  
+  <th:block th:replace="~{fragments/post-list}"></th:block>
 
   <div th:if="${posts.total == 0}" class="feed-empty">暂无文章。</div>
 
